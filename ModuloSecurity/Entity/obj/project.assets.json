@@ -4868,11 +4868,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\SENA\\Documents\\claseViernes-main\\ModuloSecurity\\Entity\\Entity.csproj",
+      "projectUniqueName": "C:\\Users\\SENA\\Documents\\Viernes_trabajo\\ModuloSecurity\\Entity\\Entity.csproj",
       "projectName": "Entity",
-      "projectPath": "C:\\Users\\SENA\\Documents\\claseViernes-main\\ModuloSecurity\\Entity\\Entity.csproj",
+      "projectPath": "C:\\Users\\SENA\\Documents\\Viernes_trabajo\\ModuloSecurity\\Entity\\Entity.csproj",
       "packagesPath": "C:\\Users\\SENA\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\SENA\\Documents\\claseViernes-main\\ModuloSecurity\\Entity\\obj\\",
+      "outputPath": "C:\\Users\\SENA\\Documents\\Viernes_trabajo\\ModuloSecurity\\Entity\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

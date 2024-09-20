@@ -30,7 +30,7 @@ namespace Data.Implements
                 throw new Exception("Registro no encontrado");
             }
 
-            context.country.Remove(entity);
+            context.Countries.Remove(entity);
             await context.SaveChangesAsync();
         }
         public async Task<IEnumerable<DataSelectDto>> GetAllSelect()
@@ -52,7 +52,7 @@ namespace Data.Implements
         }
         public async Task<country> Save(country entity)
         {
-            context.country.Add(entity);
+            context.Countries.Add(entity);
             await context.SaveChangesAsync();
             return entity;
         }
@@ -63,7 +63,7 @@ namespace Data.Implements
         }
         public async Task<country> GetByName(string Name)
         {
-            return await this.context.country.AsNoTracking().Where(item => item.Name == Name).FirstOrDefaultAsync();
+            return await this.context.Countries.AsNoTracking().Where(item => item.Name == Name).FirstOrDefaultAsync();
         }
         public async Task<IEnumerable<country>> GetAll()
         {

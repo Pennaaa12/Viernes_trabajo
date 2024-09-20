@@ -13,8 +13,10 @@ namespace Entity.Model.Security
 
         public DateTime CreateAt { get; set; }
 
-        public DateTime UpdateAt { get; set; }
+        public DateTime ? UpdateAt { get; set; }
 
-        public DateTime DeleteAt { get; set; }
+        public DateTime ? DeleteAt { get; set; }
+
+        public ICollection<Person> Persons { get; set; } = new List<Person>();
     }
 }

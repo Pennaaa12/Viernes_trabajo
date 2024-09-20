@@ -70,8 +70,31 @@ namespace Data.Implements
 
         public async Task<IEnumerable<Person>> GetAll()
         {
-            var sql = @"SELECT * FROM persons ORDER BY Id ASC";
-            return await this.context.QueryAsync<Person>(sql);
+            var sql = @"
+        SELECT 
+            p.Id,
+            p.First_name,
+            p.Last_name,
+            p.Email,
+            p.Address,
+            p.Type_document,
+            p.Document,
+            p.Birth_of_date,
+            p.Phone,
+            p.State,
+            c.Id AS CityId,
+            c.Name AS cities
+        FROM 
+            persons p
+        INNER JOIN 
+            cities c ON p.CityId = c.Id
+        WHERE 
+            p.DeleteAt IS NULL 
+        ORDER BY 
+            p.Id ASC";
+
+            return await context.QueryAsync<Person>(sql);
         }
+
     }
 }

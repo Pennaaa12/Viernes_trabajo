@@ -8,7 +8,7 @@ namespace Web.Controllers.Implements
 {
     [ApiController]
     [Route("[controller]")]
-    public class cityController:ControllerBase
+    public class cityController : ControllerBase
     {
         private readonly ICityBusiness _cityBusiness;
 
@@ -41,22 +41,22 @@ namespace Web.Controllers.Implements
                 return BadRequest("Entity is null");
             }
             var result = await _cityBusiness.Save(entity);
-            return CreatedAtAction(nameof(GetById), new { id = result.Id }, result);
+            return CreatedAtAction(nameof(GetById), new { Id = result.Id }, result);
         }
-        [HttpPut("{id}")]
+        [HttpPut("{Id}")]
         public async Task<IActionResult> Update([FromBody] cityDto entity)
         {
-            if (entity != null || entity.Id == 0)
+            if ( entity.Id == 0)
             {
                 return BadRequest();
             }
             await _cityBusiness.Update(entity);
             return NoContent();
         }
-        [HttpDelete("{id}")]
-        public async Task<IActionResult> Delete(int id)
+        [HttpDelete("{Id}")]
+        public async Task<IActionResult> Delete(int Id)
         {
-            await _cityBusiness.Delete(id);
+            await _cityBusiness.Delete(Id);
             return NoContent();
         }
     }

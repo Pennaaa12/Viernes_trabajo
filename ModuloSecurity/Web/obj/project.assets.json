@@ -5391,11 +5391,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\SENA\\Documents\\claseViernes-main\\ModuloSecurity\\Web\\Web.csproj",
+      "projectUniqueName": "C:\\Users\\SENA\\Documents\\Viernes_trabajo\\ModuloSecurity\\Web\\Web.csproj",
       "projectName": "Web",
-      "projectPath": "C:\\Users\\SENA\\Documents\\claseViernes-main\\ModuloSecurity\\Web\\Web.csproj",
+      "projectPath": "C:\\Users\\SENA\\Documents\\Viernes_trabajo\\ModuloSecurity\\Web\\Web.csproj",
       "packagesPath": "C:\\Users\\SENA\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\SENA\\Documents\\claseViernes-main\\ModuloSecurity\\Web\\obj\\",
+      "outputPath": "C:\\Users\\SENA\\Documents\\Viernes_trabajo\\ModuloSecurity\\Web\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -5417,11 +5417,11 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "C:\\Users\\SENA\\Documents\\claseViernes-main\\ModuloSecurity\\Business\\Business.csproj": {
-              "projectPath": "C:\\Users\\SENA\\Documents\\claseViernes-main\\ModuloSecurity\\Business\\Business.csproj"
+            "C:\\Users\\SENA\\Documents\\Viernes_trabajo\\ModuloSecurity\\Business\\Business.csproj": {
+              "projectPath": "C:\\Users\\SENA\\Documents\\Viernes_trabajo\\ModuloSecurity\\Business\\Business.csproj"
             },
-            "C:\\Users\\SENA\\Documents\\claseViernes-main\\ModuloSecurity\\Entity\\Entity.csproj": {
-              "projectPath": "C:\\Users\\SENA\\Documents\\claseViernes-main\\ModuloSecurity\\Entity\\Entity.csproj"
+            "C:\\Users\\SENA\\Documents\\Viernes_trabajo\\ModuloSecurity\\Entity\\Entity.csproj": {
+              "projectPath": "C:\\Users\\SENA\\Documents\\Viernes_trabajo\\ModuloSecurity\\Entity\\Entity.csproj"
             }
           }
         }

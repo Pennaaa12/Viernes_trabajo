@@ -30,14 +30,14 @@ namespace Data.Implements
                 throw new Exception("Registro no encontrado");
             }
 
-            context.city.Remove(entity); 
+            context.Cities.Remove(entity); 
             await context.SaveChangesAsync();
         }
         public async Task<IEnumerable<DataSelectDto>> GetAllSelect()
         {
             var sql = @"SELECT
                 Id,
-                CONCAT(Name, '-', name) AS TextoMostrar
+                CONCAT(name) AS TextoMostrar
                 FROM
                 city
                 WHERE DeletedAt IS NULL AND State = 1
@@ -52,18 +52,25 @@ namespace Data.Implements
         }
         public async Task<city> Save(city entity)
         {
-            context.city.Add(entity);
+            context.Cities.Add(entity);
             await context.SaveChangesAsync();
             return entity;
         }
         public async Task Update(city entity)
         {
-            context.Entry(entity).State = Microsoft.EntityFrameworkCore.EntityState.Modified;
+            var existingEntity = await context.Cities.FindAsync(entity.Id);
+            if (existingEntity == null)
+            {
+                throw new Exception("Registro no encontrado");
+            }
+
+            context.Entry(existingEntity).CurrentValues.SetValues(entity);
             await context.SaveChangesAsync();
         }
+
         public async Task<city> GetByName(string name)
         {
-            return await this.context.city.AsNoTracking().Where(item => item.name == name).FirstOrDefaultAsync();
+            return await this.context.Cities.AsNoTracking().Where(item => item.name == name).FirstOrDefaultAsync();
         }
         public async Task<IEnumerable<city>> GetAll()
         {

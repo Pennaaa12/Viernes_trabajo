@@ -11,8 +11,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Entity.Migrations
 {
     [DbContext(typeof(ApplicationDBContext))]
-    [Migration("20240906211627_cambioDeIntAStringPhonePerson")]
-    partial class cambioDeIntAStringPhonePerson
+    [Migration("20240920221430_Initial")]
+    partial class Initial
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -62,6 +62,9 @@ namespace Entity.Migrations
                     b.Property<DateTime>("Birth_of_date")
                         .HasColumnType("datetime(6)");
 
+                    b.Property<int>("CityId")
+                        .HasColumnType("int");
+
                     b.Property<DateTime>("CreateAt")
                         .HasColumnType("datetime(6)");
 
@@ -98,6 +101,8 @@ namespace Entity.Migrations
                         .HasColumnType("datetime(6)");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("CityId");
 
                     b.ToTable("Persons");
                 });
@@ -284,7 +289,7 @@ namespace Entity.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("city");
+                    b.ToTable("Cities");
                 });
 
             modelBuilder.Entity("Entity.Model.Security.country", b =>
@@ -311,7 +316,7 @@ namespace Entity.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("country");
+                    b.ToTable("Countries");
                 });
 
             modelBuilder.Entity("Entity.Model.Security.state", b =>
@@ -335,7 +340,18 @@ namespace Entity.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("state");
+                    b.ToTable("States");
+                });
+
+            modelBuilder.Entity("Entity.Model.Security.Person", b =>
+                {
+                    b.HasOne("Entity.Model.Security.city", "City")
+                        .WithMany("Persons")
+                        .HasForeignKey("CityId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("City");
                 });
 
             modelBuilder.Entity("Entity.Model.Security.RoleView", b =>
@@ -355,6 +371,11 @@ namespace Entity.Migrations
                     b.Navigation("IdRole");
 
                     b.Navigation("IdView");
+                });
+
+            modelBuilder.Entity("Entity.Model.Security.city", b =>
+                {
+                    b.Navigation("Persons");
                 });
 #pragma warning restore 612, 618
         }

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "iB1gLchnBR0=",
+  "dgSpecHash": "yIdk1ZJrANs=",
   "success": true,
-  "projectFilePath": "C:\\Users\\SENA\\Documents\\claseViernes-main\\ModuloSecurity\\Entity\\Entity.csproj",
+  "projectFilePath": "C:\\Users\\SENA\\Documents\\Viernes_trabajo\\ModuloSecurity\\Entity\\Entity.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\SENA\\.nuget\\packages\\azure.core\\1.35.0\\azure.core.1.35.0.nupkg.sha512",
     "C:\\Users\\SENA\\.nuget\\packages\\azure.identity\\1.10.3\\azure.identity.1.10.3.nupkg.sha512",

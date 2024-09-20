@@ -21,5 +21,11 @@
         public string Phone { get; set; }
 
         public bool State { get; set; }
+
+        public int CityId { get; set; }
+
+        //public cityDto City { get; set; }
+
+
     }
 }
